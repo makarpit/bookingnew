@@ -22,3 +22,5 @@ def rules(request):
 def notifications(request):
     return render(request, 'home/notifications.html')			
 	
+def appointment(request):
+    return render(request, 'home/appointment.html')	
