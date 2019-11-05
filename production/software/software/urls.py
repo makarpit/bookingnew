@@ -20,12 +20,12 @@ from django.conf.urls.static import static
 from . import views
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls), 
 	path('', views.index, name='Home Page'),
 	path('shop/', include('shop.urls')),
 	path('blog/', include('blog.urls')),
 	path('about', views.about, name='About us Page'),
-	path('testimonial', views.testimonial, name='Testimonial Page'),
+	path('testimonials', views.testimonial, name='Testimonial Page'),
 	path('member', views.member, name='Member Page'),
 	path('news', views.news, name='News Page'),
 	path('rules', views.rules, name='Rules Page'),
