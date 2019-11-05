@@ -1,0 +1,54 @@
+
+{% extends 'blog/main.html' %}
+{% load static %}
+{% block body %}
+  
+    
+  
+      
+      
+      <div class="site-section" id="property-details">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-7">
+              <div class="owl-carousel slide-one-item with-dots">
+                <div><img src="{% static 'images/property_1.jpg' %}" alt="Image" class="img-fluid"></div>
+                <div><img src="{% static 'images/property_2.jpg' %}" alt="Image" class="img-fluid"></div>
+                <div><img src="{% static 'images/property_3.jpg' %}" alt="Image" class="img-fluid"></div>
+              </div>
+            </div>
+            <div class="col-lg-5 pl-lg-5 ml-auto">
+              <div class="mb-5">
+                <h3 class="text-black mb-4">{{post.title}}</h3>
+                <p>{{post.heading0}}</p>
+                <div class="fb-like" data-href="http://127.0.0.1:8000/blog/blogpost/{{post.post_id}}" data-layout="standard" data-action="like" data-size="large" data-show-faces="false" data-share="true"></div><br>
+
+                <p>{{post.chead0}}</p>
+                <h2>{{post.head1}}</h2>
+                <p>{{post.chead1}}</p>
+                <p>{{post.head2}}</p>
+                <p>{{post.chead2}}</p>
+                
+              </div>
+              <div class="p-4">
+                  <h4 class="font-italic">Elsewhere</h4>
+                  <ol class="list-unstyled">
+                      <li><a href="#">GitHub</a></li>
+                      <li><a href="#">Twitter</a></li>
+                      <li><a href="#">Facebook</a></li>
+                  </ol>
+              </div>
+              
+  
+            </div>
+            
+          </div>
+          <div class="fb-comments" data-href="http://127.0.0.1:8000/blog/blogpost/{{post.post_id}}" data-numposts="5"></div>
+          <p><a href="#" class="btn btn-primary">Buy Property</a></p></div>
+        </div>
+      </div>
+  
+     
+     
+    {% endblock %}
+
