@@ -45,3 +45,6 @@ class MemberAdmin(admin.ModelAdmin):
 
 admin.site.register(Member, MemberAdmin)
 
+class Media:
+    js = ("blog/js/typed.js",)
+	
