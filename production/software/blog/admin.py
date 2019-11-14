@@ -36,6 +36,7 @@ class TestimonialAdmin(admin.ModelAdmin):
 
 admin.site.register(Testimonial, TestimonialAdmin)
 
+
 class MemberAdmin(admin.ModelAdmin):
 	  list_display = ['name','meta_title','image']
 	  search_fields = ['name','meta_title','image']
