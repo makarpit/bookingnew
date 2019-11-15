@@ -22,7 +22,10 @@ class Page(models.Model):
     description = RichTextField(blank=True, null=True)
     meta_title = models.CharField(max_length=70, default="")
     meta_desc = models.CharField(max_length=500, default="")
-    image = models.ImageField(upload_to='shop/images', default="")
+    #image = models.ImageField(upload_to='shop/images', default="")
+    image = models.ImageField(upload_to='shop/images', blank=True)
+    image_one = models.ImageField(upload_to='shop/images', blank=True)
+    image_two = models.ImageField(upload_to='shop/images', blank=True)
     def __str__(self):
         return self.name
 		

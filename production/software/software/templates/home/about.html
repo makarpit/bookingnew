@@ -6,14 +6,15 @@
       <div class="row">
         <div class="col-lg-7">
           <div class="owl-carousel slide-one-item with-dots">
-            <div><img src="{% static 'images/img_1.jpg' %}" alt="Image" class="img-fluid"></div>
-            <div><img src="{% static 'images/img_3.jpg' %}" alt="Image" class="img-fluid"></div>
+              <div><img src="media/{{about.image}}" alt="Hi!"></div>
+              <div><img src="media/{{about.image_one}}" alt="Image" class="img-fluid"></div>
+              <div><img src="media/{{about.image_two}}" alt="Image" class="img-fluid"></div>
           </div>
         </div>
         <div class="col-lg-5 pl-lg-5 ml-auto">
           <div class="mb-5">
             <h3 class="text-black mb-4">Pujniya Baba ji And Guru Mata ji</h3>
-            <p>Guruji's doors were open to the high and low, poor and rich, and people of all religious affiliations. From the most ordinary of men to the most powerful of politicians, businessmen, bureaucrats, armed service personnel, doctors, and professionals, everyone came to seek his blessings. All were equally in need of him and Guruji blessed all alike. Those sitting close to him, touching his feet, benefitted as much as those seeking his blessing in their prayers anywhere in the world. What mattered most was complete surrender and unconditional faith reposed in him. Guruji was a giver, he never expected or took anything from anyone. "Kalyan karta", Guruji would say and "Blessings always" is what the devotee would get. He once explained that his "Blessings always" were not for this life alone, but ended with nirvana.</p>
+            <p>{{ about.description|striptags }}</p>
             <div class="fb-like" data-href="" data-layout="standard" data-action="like" data-size="large" data-show-faces="false" data-share="true"></div><br>
 
           </div>
