@@ -2,19 +2,34 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from blog.models import Page
 from blog.models import Member
+from blog.models import Testimonial
+from blog.models import Service
+
+
 
 
 def index(request):
+    testimonialdata = Testimonial.objects.all()
     member = Member.objects.all()
-    return render(request, 'home/index.html',{'member':member})
+    servicedata = Service.objects.all()
+    about = Page.objects.filter(page_id = '3')[0]
+    return render(request, 'home/index.html',
+                  {'testimonialdata': testimonialdata,'member':member,'about': about,'servicedata':servicedata})
 	
 def about(request):
     about = Page.objects.filter(page_id = '3')[0]
     #return HttpResponse(about)
     return render(request, 'home/about.html',{'about':about})
 	
-def testimonial(request):
-    return render(request, 'home/testimonial.html')
+def testimonial(request, id):
+    singletestimonial = Testimonial.objects.filter(testimonial_id = id)[0]
+    return render(request, 'home/testimonial.html',
+                  {'singletestimonial':singletestimonial})
+				  
+def service(request, id):
+    singletesservice = Service.objects.filter(service_id = id)[0]
+    return render(request, 'home/service.html',
+                  {'singletesservice':singletesservice})
 	
 def member(request):
     id = request.GET.get('q')
@@ -26,7 +41,9 @@ def news(request):
     return render(request, 'home/news.html')	
 	
 def rules(request):
-    return render(request, 'home/rules.html')		
+    page = Page.objects.filter(page_id = '1')[0]
+    return render(request, 'home/rules.html',
+                  {'page':page})		
 	
 def notifications(request):
     page = Page.objects.filter(page_id = '2')[0]

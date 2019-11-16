@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Blogpost, Page, NewsAndEvent, Testimonial, Member
+from .models import Blogpost, Page, NewsAndEvent, Testimonial, Member, Service
 
 class BlogpostAdmin(admin.ModelAdmin):
 	  list_display = ['title','head0','head1']
@@ -35,6 +35,15 @@ class TestimonialAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Testimonial, TestimonialAdmin)
+
+class ServiceAdmin(admin.ModelAdmin):
+	  list_display = ['name','title','meta_title']
+	  search_fields = ['name','title','meta_title']
+	  list_filter = ['name','title','meta_title']
+
+
+
+admin.site.register(Service, ServiceAdmin)
 
 
 class MemberAdmin(admin.ModelAdmin):

@@ -49,6 +49,17 @@ class Testimonial(models.Model):
     def __str__(self):
         return self.name
 		
+class Service(models.Model):
+    service_id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=50)
+    title = RichTextField(blank=True, null=True)
+    description = RichTextField(blank=True, null=True)
+    meta_title = models.CharField(max_length=70, default="")
+    meta_desc = models.CharField(max_length=500, default="")
+    def __str__(self):
+        return self.name
+		
+		
 class Member(models.Model):
     member_id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=50)
