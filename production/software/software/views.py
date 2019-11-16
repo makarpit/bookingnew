@@ -4,6 +4,7 @@ from blog.models import Page
 from blog.models import Member
 from blog.models import Testimonial
 from blog.models import Service
+from blog.models import NewsAndEvent
 
 
 
@@ -12,9 +13,10 @@ def index(request):
     testimonialdata = Testimonial.objects.all()
     member = Member.objects.all()
     servicedata = Service.objects.all()
+    news = NewsAndEvent.objects.all()
     about = Page.objects.filter(page_id = '3')[0]
     return render(request, 'home/index.html',
-                  {'testimonialdata': testimonialdata,'member':member,'about': about,'servicedata':servicedata})
+                  {'testimonialdata': testimonialdata,'member':member,'about': about,'servicedata':servicedata,'news':news})
 	
 def about(request):
     about = Page.objects.filter(page_id = '3')[0]
@@ -37,8 +39,9 @@ def member(request):
     member = Member.objects.filter(member_id = id)[0]
     return render(request, 'home/member.html',{'member':member})
 	
-def news(request):
-    return render(request, 'home/news.html')	
+def news(request, id):
+    singlenews = NewsAndEvent.objects.filter(news_id = id)[0]
+    return render(request, 'home/news.html',{'singlenews':singlenews})	
 	
 def rules(request):
     page = Page.objects.filter(page_id = '1')[0]
