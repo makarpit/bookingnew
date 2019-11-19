@@ -32,6 +32,7 @@ urlpatterns = [
 	path('rules', views.rules, name='Rules Page'),
 	path('notifications', views.notifications, name='Notification Page'),
 	path('appointment', views.appointment, name='Appointment Page'),
+	path('live', views.live, name='Live Streaming Page'),
 
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

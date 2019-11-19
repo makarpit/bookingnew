@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Blogpost, Page, NewsAndEvent, Testimonial, Member, Service
+from .models import Blogpost, Page, NewsAndEvent, Testimonial, Member, Service, Video
 
 class BlogpostAdmin(admin.ModelAdmin):
 	  list_display = ['title','head0','head1']
@@ -54,6 +54,11 @@ class MemberAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Member, MemberAdmin)
+
+class VideoAdmin(admin.ModelAdmin):
+	  list_display = ['title']
+
+admin.site.register(Video, VideoAdmin)
 
 class Media:
     js = ("blog/js/typed.js",)

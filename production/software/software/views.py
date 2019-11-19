@@ -5,6 +5,7 @@ from blog.models import Member
 from blog.models import Testimonial
 from blog.models import Service
 from blog.models import NewsAndEvent
+from blog.models import Video
 
 
 
@@ -42,6 +43,11 @@ def member(request):
 def news(request, id):
     singlenews = NewsAndEvent.objects.filter(news_id = id)[0]
     return render(request, 'home/news.html',{'singlenews':singlenews})	
+	
+def live(request):
+    myposts = Video.objects.all()
+    return render(request, 'home/live.html',
+                  {'myposts': myposts})	
 	
 def rules(request):
     page = Page.objects.filter(page_id = '1')[0]
