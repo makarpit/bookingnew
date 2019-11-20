@@ -1,7 +1,7 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import Product, Contact, Orders, OrderUpdate
+from .models import Product, Contact, Orders, OrderUpdate, Newsletter
 
 class ProductAdmin(admin.ModelAdmin):
 	  list_display = ['product_name','category','price']
@@ -38,3 +38,12 @@ class OrderUpdateAdmin(admin.ModelAdmin):
 
 
 admin.site.register(OrderUpdate, OrderUpdateAdmin)
+
+class NewsletterAdmin(admin.ModelAdmin):
+	  list_display = ['name','email','phone']
+	  search_fields = ['name','email','phone']
+	  list_filter = ['name','email','phone']
+
+
+
+admin.site.register(Newsletter, NewsletterAdmin)

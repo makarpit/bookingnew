@@ -5,6 +5,8 @@ from blog.models import Member
 from blog.models import Testimonial
 from blog.models import Service
 from blog.models import NewsAndEvent
+from shop.models import Newsletter
+from django.http import HttpResponseRedirect
 
 
 
@@ -56,3 +58,17 @@ def notifications(request):
 	
 def appointment(request):
     return render(request, 'home/appointment.html')	
+
+def postSubscribeNewsLetter(request):
+    #return HttpResponse(request.POST)
+    if request.method=="POST":
+        name = request.POST.get('name', '')
+        email = request.POST.get('email', '')
+        phone = request.POST.get('phone', '')
+        desc = request.POST.get('desc', '')
+        
+        newsletter = Newsletter(name=name, email=email, phone=phone, desc=desc)
+        
+        newsletter.save()
+    return HttpResponseRedirect("/")
+    

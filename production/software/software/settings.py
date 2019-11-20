@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ckeditor',
+    'bootstrap_modal_forms',
 	]
 
 MIDDLEWARE = [
