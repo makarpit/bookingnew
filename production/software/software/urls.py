@@ -32,7 +32,12 @@ urlpatterns = [
 	path('rules', views.rules, name='Rules Page'),
 	path('notifications', views.notifications, name='Notification Page'),
 	path('appointment', views.appointment, name='Appointment Page'),
+<<<<<<< HEAD
 	path('postSubscribeNewsLetter/', views.postSubscribeNewsLetter, name='SubscribeNewsLetter'),
+=======
+	path('live', views.live, name='Live Streaming Page'),
+
+>>>>>>> 91ad5d2126dce37ea8f97e3a6e7f7cf68ad63a24
 
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 admin.site.site_header = 'Manav Mandir - Lavkush Ashram'

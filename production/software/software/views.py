@@ -5,8 +5,12 @@ from blog.models import Member
 from blog.models import Testimonial
 from blog.models import Service
 from blog.models import NewsAndEvent
+<<<<<<< HEAD
 from shop.models import Newsletter
 from django.http import HttpResponseRedirect
+=======
+from blog.models import Video
+>>>>>>> 91ad5d2126dce37ea8f97e3a6e7f7cf68ad63a24
 
 
 
@@ -44,6 +48,11 @@ def member(request):
 def news(request, id):
     singlenews = NewsAndEvent.objects.filter(news_id = id)[0]
     return render(request, 'home/news.html',{'singlenews':singlenews})	
+	
+def live(request):
+    myposts = Video.objects.all()
+    return render(request, 'home/live.html',
+                  {'myposts': myposts})	
 	
 def rules(request):
     page = Page.objects.filter(page_id = '1')[0]
