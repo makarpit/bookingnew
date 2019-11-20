@@ -5,13 +5,9 @@ from blog.models import Member
 from blog.models import Testimonial
 from blog.models import Service
 from blog.models import NewsAndEvent
-<<<<<<< HEAD
 from shop.models import Newsletter
 from django.http import HttpResponseRedirect
-=======
 from blog.models import Video
->>>>>>> 91ad5d2126dce37ea8f97e3a6e7f7cf68ad63a24
-
 
 
 
